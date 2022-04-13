@@ -1,0 +1,12 @@
+<form [formGroup]="signupforms" (ngSubmit)="onSubmits(signupforms)" style="margin-top: 10px;">
+    <label for="Name">Employee Name</label>
+    <input type="text" id="Name" class="form-control" formControlName="EmpName">
+    <label for="Designation">Designation</label>
+    <input type="text" id="Designation" class="form-control" formControlName="EmpDesignation">
+    <span *ngIf="!signupforms.get('EmpDesignation')?.valid && signupforms.get('EmpDesignation')?.touched">please enter a valid Designation</span><br>
+    <label for="EmpPassword">Password</label>
+    <input type="password" id="EmpPassword" class="form-control" formControlName="EmpPassword"><br>
+    <label for="EmpSalary">Salary</label>
+    <input type="text" id="EmpSalary" class="form-control" formControlName="EmpSalary"><br>
+    <button type="submit" [disabled]="!signupforms.valid" class="btn btn-primary" >Submit</button>
+    </form>

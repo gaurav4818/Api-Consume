@@ -1,0 +1,25 @@
+
+
+<table class="table table-striped"> 
+    <tr>
+      <th>EmpId</th>
+      <th>EmpName</th>
+      <th>EmpDesignation</th>
+      <th>EmpPassword</th>
+      <th>EmpSalary</th>
+    </tr>
+    <tr *ngFor="let emp of AllEmployee">
+      <td>{{emp.id}}</td>
+      <td>{{emp.empName}}</td>
+      <td>{{emp.empDesignation}}</td>
+      <td>{{emp.empPassword}}</td>
+      <td>{{emp.empSalary}}</td>
+      <td><a [routerLink]="['/EditEmp',emp.id]">Edit</a></td>
+      <td><a [routerLink]="['/DeleteEmp',emp.id]" >Delete</a></td>
+    </tr>
+
+  </table>
+  <!-- HTML !-->
+<button class="button-42" type="button" (click)="onaddemp()">Add Employee</button>
+
+<!--[queryParams]="{ id:emp.id}"-->

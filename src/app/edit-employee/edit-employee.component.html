@@ -1,0 +1,15 @@
+<form [formGroup]="editforms" (ngSubmit)="onUpdate(editforms)" style="margin-top: 10px;">
+    <label for="id">Employee Id</label>
+    <input type="text" id="id" class="form-control" formControlName="Id" readonly>
+    <label for="Name">Employee Name</label>
+    <input type="text" id="Name" class="form-control" formControlName="EmpName">
+    <label for="Designation">Designation</label>
+    <input type="text" id="Designation" class="form-control" formControlName="EmpDesignation">
+    <span *ngIf="!editforms.get('EmpDesignation')?.valid && editforms.get('EmpDesignation')?.touched">please enter a valid Designation</span><br>
+    <label for="EmpPassword">Password</label>
+    <input type="password" id="EmpPassword" class="form-control" formControlName="EmpPassword"><br>
+    <label for="EmpSalary">Salary</label>
+    <input type="text" id="EmpSalary" class="form-control" formControlName="EmpSalary"><br>
+    <button type="submit" [disabled]="!editforms.valid" class="btn btn-primary" >Update</button>
+    </form>
+
