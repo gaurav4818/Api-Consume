@@ -29,6 +29,6 @@ export class EmpServiceService {
   }
   DeleteEmployee(empid:any):Observable<any>
   {
-    return this.http.delete(this.BaseUrl+'/'+empid);
+    return this.http.delete(this.BaseUrl+'/'+empid,{responseType:'text'});
   }
 }

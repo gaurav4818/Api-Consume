@@ -30,7 +30,10 @@ export class DeleteEmployeeComponent implements OnInit {
   {
       if(confirm('Are you sure want to delete '+this.Employee.empName+' details.'))
      {
-      this.empservice.DeleteEmployee(this.id).subscribe();
+       this.empservice.DeleteEmployee(this.id).subscribe(data=>{
+       console.log(data);
+      });
+      
       this.route.navigate(['/allemp'],{relativeTo:this.routes});
      }
   }
